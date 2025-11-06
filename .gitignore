@@ -1,5 +1,25 @@
-venv/
+# --- Python/Django ignores ---
 __pycache__/
-*.pyc
+*.py[cod]
+*.sqlite3
 db.sqlite3
+*.log
+*.pot
+*.pyc
+
+# --- Environment ---
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- IDE/editor files ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# --- Django static files ---
 staticfiles/
+media/
