@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Findoc Backend Demo</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Findoc</h1>
+        <button id="ipoBtn">IPO</button>
+        <button id="rneBtn">Refer & Earn</button>
+    </div>
+
+    <!-- IPO Overlay -->
+    <div id="ipoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ipoModal')">&times;</span>
+            <iframe src="https://uat-ipo.findoc.com/" frameborder="0">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- RnE Overlay -->
+    <div id="rneModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('rneModal')">&times;</span>
+            <iframe
+                src="https://www.ref-r.com/clients/findoc?UserId=FDE1136&SessionId=0x015F31EBED1358980401200947D116&Link=2&Calling_App=FT&Target_App=CLIENTSUMMARY&Product=ODIN%20AERO"
+                frameborder="0">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        document.getElementById('ipoBtn').onclick = () => openModal('ipoModal');
+        document.getElementById('rneBtn').onclick = () => openModal('rneModal');
+    </script>
+</body>
+
+</html>

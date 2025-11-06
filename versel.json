@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "findoc_backend/wsgi.py",
+            "use": "@vercel/python"
+        },
+        {
+            "src": "core/static/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/core/static/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "findoc_backend/wsgi.py"
+        }
+    ]
+}
