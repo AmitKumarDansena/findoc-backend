@@ -13,13 +13,14 @@
         <h1>Welcome to Findoc</h1>
         <button id="ipoBtn">IPO</button>
         <button id="rneBtn">Refer & Earn</button>
+        <button id="webhookBtn">Webhook</button>
     </div>
 
     <!-- IPO Overlay -->
     <div id="ipoModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('ipoModal')">&times;</span>
-            <iframe src="https://uat-ipo.findoc.com/" frameborder="0">
+            <iframe width='1080' height='760' src="https://uat-ipo.findoc.com/" frameborder="0" allowfullscreen>
             </iframe>
         </div>
     </div>
@@ -35,6 +36,16 @@
         </div>
     </div>
 
+    <!-- Webhook API Documenttation-->
+    <div id="webhookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('webhookModal')">&times;</span>
+            <iframe src="http://192.168.10.37:10237/api/v1/rne/referred-webhook/" frameborder="0">
+            </iframe>
+        </div>
+    </div>
+
+
     <script>
         function openModal(id) {
             document.getElementById(id).style.display = 'block';
@@ -45,6 +56,7 @@
 
         document.getElementById('ipoBtn').onclick = () => openModal('ipoModal');
         document.getElementById('rneBtn').onclick = () => openModal('rneModal');
+        document.getElementById('webhookBtn').onclick = () => openModal('webhookModal');
     </script>
 </body>
 
